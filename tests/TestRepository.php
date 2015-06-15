@@ -1,5 +1,5 @@
 <?php namespace Tests;
-use \logstore_expander\repository as moodle_repository;
+use \log_expander\repository as moodle_repository;
 
 class TestRepository extends moodle_repository {
     /**

@@ -1,6 +1,6 @@
 <?php namespace Tests;
-use \logstore_expander\service as moodle_service;
-use \logstore_expander\controller as moodle_controller;
+use \log_expander\service as moodle_service;
+use \log_expander\controller as moodle_controller;
 
 class ControllerTest extends TestCase {
     /**
