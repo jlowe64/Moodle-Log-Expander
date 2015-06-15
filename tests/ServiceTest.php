@@ -1,4 +1,4 @@
-<?php namespace Tests\Moodle;
+<?php namespace Tests;
 use \logstore_expander\service as moodle_service;
 
 class ServiceTest extends TestCase {
