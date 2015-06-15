@@ -6,6 +6,8 @@ You'll need to install [Composer](https://getcomposer.org/) first.
 
 
 ## Supported Events
+Mapping for moodle event names to expander event classes can be found in the [Controller](../src/controller.php).
+
 Moodle Event | Expander Event
 --- | ---
 \core\event\course_viewed | [Event](../src/events/Event.php)
