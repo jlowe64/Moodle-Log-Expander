@@ -1,15 +1,15 @@
 <?php namespace Tests;
-use \log_expander\repository as moodle_repository;
+use \LogExpander\Repository as MoodleRepository;
 
-class TestRepository extends moodle_repository {
+class TestRepository extends MoodleRepository {
     /**
      * Reads an object from the store with the given id.
      * @param string $type
      * @param [string => mixed] $query
      * @return php_obj
-     * @override moodle_repository
+     * @override MoodleRepository
      */
-    protected function read_store($type, array $query) {
+    protected function readStore($type, array $query) {
         return (object) [
             'id' => 1,
             'username' => 'test_username',
@@ -34,8 +34,8 @@ class TestRepository extends moodle_repository {
      * @param string $type
      * @return php_obj
      */
-    public function read_object($id, $type) {
-        $model = $this->read_store($type, ['id' => $id]);
+    public function readObject($id, $type) {
+        $model = $this->readStore($type, ['id' => $id]);
         $model->id = $id;
         return $model;
     }

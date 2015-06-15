@@ -1,104 +1,104 @@
-<?php namespace log_expander;
-use \stdClass as php_obj;
+<?php namespace LogExpander;
+use \stdClass as PhpObj;
 
-class service extends php_obj {
+class Service extends PhpObj {
     protected $repo;
 
     /**
-     * Constructs a new service.
+     * Constructs a new Service.
      * @param repository $repo The LRS to be used to store statements.
      */
-    public function __construct(repository $repo) {
+    public function __construct(Repository $repo) {
         $this->repo = $repo;
     }
 
     /**
      * Reads data for an event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    private function read_event(array $opts) {
+    private function readEvent(array $opts) {
         return [
-            'user' => $this->repo->read_user($opts['userid']),
-            'course' => $this->repo->read_course($opts['courseid']),
+            'user' => $this->repo->readUser($opts['userid']),
+            'course' => $this->repo->readCourse($opts['courseid']),
             'event' => $opts,
         ];
     }
 
     /**
      * Reads data for a course_viewed event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_course_viewed_event(array $opts) {
-        return $this->read_event($opts);
+    public function readCourseViewedEvent(array $opts) {
+        return $this->readEvent($opts);
     }
 
     /**
      * Reads data for a module_viewed event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_module_viewed_event(array $opts) {
-        return array_merge($this->read_event($opts), [
-            'module' => $this->repo->read_module($opts['objectid'], $opts['objecttable']),
+    public function readModuleViewedEvent(array $opts) {
+        return array_merge($this->readEvent($opts), [
+            'module' => $this->repo->readModule($opts['objectid'], $opts['objecttable']),
         ]);
     }
 
     /**
      * Reads data for a attempt_started event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_attempt_started_event(array $opts) {
-        $attempt = $this->repo->read_attempt($opts['objectid']);
-        return array_merge($this->read_event($opts), [
+    public function readAttemptStartedEvent(array $opts) {
+        $attempt = $this->repo->readAttempt($opts['objectid']);
+        return array_merge($this->readEvent($opts), [
             'attempt' => $attempt,
-            'module' => $this->repo->read_module($attempt->quiz, 'quiz'),
+            'module' => $this->repo->readModule($attempt->quiz, 'quiz'),
         ]);
     }
 
     /**
      * Reads data for a user_loggedin event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_user_loggedin_event(array $opts) {
-        return $this->read_event($opts);
+    public function readUserLoggedinEvent(array $opts) {
+        return $this->readEvent($opts);
     }
 
     /**
      * Reads data for a user_loggedout event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_user_loggedout_event(array $opts) {
-        return $this->read_event($opts);
+    public function readUserLoggedoutEvent(array $opts) {
+        return $this->readEvent($opts);
     }
 
     /**
      * Reads data for a assignment_graded event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_assignment_graded_event(array $opts) {
-        $grade = $this->repo->read_object($opts['objectid'], $opts['objecttable']);
-        return array_merge($this->read_event($opts), [
+    public function readAssignmentGradedEvent(array $opts) {
+        $grade = $this->repo->readObject($opts['objectid'], $opts['objecttable']);
+        return array_merge($this->readEvent($opts), [
             'grade' => $grade,
-            'module' => $this->repo->read_module($grade->assignment, 'assign'),
+            'module' => $this->repo->readModule($grade->assignment, 'assign'),
         ]);
     }
 
     /**
      * Reads data for a assignment_submitted event.
-     * @param [string => mixed] $opts
-     * @return [string => mixed]
+     * @param [String => Mixed] $opts
+     * @return [String => Mixed]
      */
-    public function read_assignment_submitted_event(array $opts) {
-        $submission = $this->repo->read_object($opts['objectid'], $opts['objecttable']);
-        return array_merge($this->read_event($opts), [
+    public function readAssignmentSubmittedEvent(array $opts) {
+        $submission = $this->repo->readObject($opts['objectid'], $opts['objecttable']);
+        return array_merge($this->readEvent($opts), [
             'submission' => $submission,
-            'module' => $this->repo->read_module($submission->assignment, 'assign'),
+            'module' => $this->repo->readModule($submission->assignment, 'assign'),
         ]);
     }
 }

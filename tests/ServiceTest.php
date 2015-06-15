@@ -1,5 +1,5 @@
 <?php namespace Tests;
-use \log_expander\service as moodle_service;
+use \LogExpander\Service as MoodleService;
 
 class ServiceTest extends TestCase {
     /**
@@ -7,69 +7,69 @@ class ServiceTest extends TestCase {
      * @override TestCase
      */
     public function setup() {
-        $this->service = new moodle_service(new TestRepository((object) [], $this->cfg));
+        $this->service = new MoodleService(new TestRepository((object) [], $this->cfg));
     }
 
     /**
-     * Tests the read_course_viewed_event method of the moodle_service.
+     * Tests the readCourseViewedEvent method of the MoodleService.
      */
     public function testReadCourseViewedEvent() {
         $test_data = $this->constructCourseViewed();
-        $event = $this->service->read_course_viewed_event($test_data);
+        $event = $this->service->readCourseViewedEvent($test_data);
         $this->assertCourseViewed($test_data, $event);
     }
 
     /**
-     * Tests the read_module_viewed_event method of the moodle_service.
+     * Tests the readModuleViewedEvent method of the MoodleService.
      */
     public function testReadModuleViewedEvent() {
         $test_data = $this->constructPageViewed();
-        $event = $this->service->read_module_viewed_event($test_data);
+        $event = $this->service->readModuleViewedEvent($test_data);
         $this->assertModuleViewed($test_data, $event, 'page');
     }
 
     /**
-     * Tests the read_attempt_started_event method of the moodle_service.
+     * Tests the readAttemptStartedEvent method of the MoodleService.
      */
     public function testReadAttemptStartedEvent() {
         $test_data = $this->constructAttemptStarted();
-        $event = $this->service->read_attempt_started_event($test_data);
+        $event = $this->service->readAttemptStartedEvent($test_data);
         $this->assertAttemptStarted($test_data, $event);
     }
 
     /**
-     * Tests the read_user_loggedin_event method of the moodle_service.
+     * Tests the readUserLoggedinEvent method of the MoodleService.
      */
     public function testReadUserLoggedinEvent() {
         $test_data = $this->constructUserLoggedin();
-        $event = $this->service->read_user_loggedin_event($test_data);
+        $event = $this->service->readUserLoggedinEvent($test_data);
         $this->assertUserLoggedin($test_data, $event);
     }
 
     /**
-     * Tests the read_user_loggedout_event method of the moodle_service.
+     * Tests the readUserLoggedoutEvent method of the MoodleService.
      */
     public function testReadUserLoggedoutEvent() {
         $test_data = $this->constructUserLoggedout();
-        $event = $this->service->read_user_loggedout_event($test_data);
+        $event = $this->service->readUserLoggedoutEvent($test_data);
         $this->assertUserLoggedout($test_data, $event);
     }
 
     /**
-     * Tests the read_assignment_graded_event method of the moodle_service.
+     * Tests the readAssignmentGradedEvent method of the MoodleService.
      */
     public function testReadAssignmentGradedEvent() {
         $test_data = $this->constructAssignmentGraded();
-        $event = $this->service->read_assignment_graded_event($test_data);
+        $event = $this->service->readAssignmentGradedEvent($test_data);
         $this->assertAssignmentGraded($test_data, $event);
     }
 
     /**
-     * Tests the read_assignment_submitted_event method of the moodle_service.
+     * Tests the readAssignmentSubmittedEvent method of the MoodleService.
      */
     public function testReadAssignmentSubmittedEvent() {
         $test_data = $this->constructAssignmentSubmitted();
-        $event = $this->service->read_assignment_submitted_event($test_data);
+        $event = $this->service->readAssignmentSubmittedEvent($test_data);
         $this->assertAssignmentSubmitted($test_data, $event);
     }    
 }
