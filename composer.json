@@ -1,4 +1,5 @@
 {
+    "name": "learninglocker/moodle-log-expander",
     "autoload": {
         "psr-4": {
           "LogExpander\\": "src/",
