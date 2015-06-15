@@ -34,7 +34,7 @@ class Controller extends PhpObj {
     public function createEvent(array $opts) {
         $route = isset($opts['eventname']) ? $opts['eventname'] : '';
         if (isset(static::$routes[$route])) {
-            $event = static::$routes[$route];
+            $event = '\LogExpander\Events\\'.static::$routes[$route];
             return (new $event($this->repo))->read($opts);
         } else {
             return null;
