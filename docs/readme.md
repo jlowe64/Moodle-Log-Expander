@@ -16,6 +16,7 @@ Moodle Event | Expander Event | Test
 \mod_url\event\course_module_viewed | [ModuleEvent](../src/Events/ModuleEvent.php) | [ModuleEventTest](../tests/ModuleEventTest.php)
 \mod_folder\event\course_module_viewed | [ModuleEvent](../src/Events/ModuleEvent.php) | [ModuleEventTest](../tests/ModuleEventTest.php)
 \mod_book\event\course_module_viewed | [ModuleEvent](../src/Events/ModuleEvent.php) | [ModuleEventTest](../tests/ModuleEventTest.php)
+\mod_scorm\event\course_module_viewed | [ModuleEvent](../src/Events/ModuleEvent.php) | [ModuleEventTest](../tests/ModuleEventTest.php)
 \mod_quiz\event\attempt_preview_started | [AttemptEvent](../src/Events/AttemptEvent.php) | [AttemptEventTest](../tests/AttemptEventTest.php)
 \mod_quiz\event\attempt_reviewed | [AttemptEvent](../src/Events/AttemptEvent.php) | [AttemptEventTest](../tests/AttemptEventTest.php)
 \core\event\user_loggedin | [Event](../src/Events/Event.php) | [EventTest](../tests/EventTest.php)
