@@ -96,7 +96,7 @@ class Repository extends PhpObj {
      */
     public function readDiscussion($id) {
         $model = $this->readObject($id, 'forum_discussions');
-        $model->url = $this->cfg->wwwroot . '/mod/forum/discuss.php?d=' . $id);
+        $model->url = $this->cfg->wwwroot . '/mod/forum/discuss.php?d=' . $id;
         return $model;
     }
 }
