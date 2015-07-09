@@ -1,5 +1,6 @@
 {
     "name": "learninglocker/moodle-log-expander",
+    "license": "GPL v3",
     "autoload": {
         "psr-4": {
           "LogExpander\\": "src/",
