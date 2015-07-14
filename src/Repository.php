@@ -88,4 +88,15 @@ class Repository extends PhpObj {
         $model->url = $this->cfg->wwwroot;
         return $model;
     }
+    
+    /**
+     * Reads a discussion from the store with the given id.
+     * @param String $id
+     * @return PhpObj
+     */
+    public function readDiscussion($id) {
+        $model = $this->readObject($id, 'forum_discussions');
+        $model->url = $this->cfg->wwwroot . '/mod/forum/discuss.php?d=' . $id;
+        return $model;
+    }
 }

@@ -68,4 +68,9 @@ class EventTest extends PhpUnitTestCase {
         $this->assertRecord($input, $output);
         $this->assertEquals($this->cfg->wwwroot . '/mod/quiz/attempt.php?attempt=' . $output->id, $output->url);
     }
+    
+    protected function assertDiscussion($input, $output) {
+        $this->assertRecord($input, $output);
+        $this->assertEquals($this->cfg->wwwroot . '/mod/forum/discuss.php?d=' . $output->id, $output->url);
+    }
 }
