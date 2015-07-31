@@ -52,7 +52,8 @@
         "lastnamephonetic": "",
         "firstnamephonetic": "",
         "middlename": "",
-        "alternatename": ""
+        "alternatename": "",
+        "type": "mod_user"
     },
     "course": {
         "id": "2",
@@ -85,7 +86,8 @@
         "enablecompletion": "0",
         "completionnotify": "0",
         "cacherev": "1434621381",
-        "url": "http:\/\/localhost\/moodle\/course.php?id=2"
+        "url": "http:\/\/localhost\/moodle\/course.php?id=2",
+        "type": "mod_course"
     },
     "app": {
         "id": "1",
@@ -118,7 +120,8 @@
         "enablecompletion": "0",
         "completionnotify": "0",
         "cacherev": "1434621381",
-        "url": "http:\/\/localhost\/moodle\/course.php?id=1"
+        "url": "http:\/\/localhost\/moodle\/course.php?id=1",
+        "type": "mod_course"
     },
     "event": {
         "eventname": "\\mod_quiz\\event\\attempt_reviewed",
@@ -158,7 +161,8 @@
         "timecheckstate": null,
         "sumgrades": "1.00000",
         "url": "http:\/\/localhost\/moodle\/mod\/quiz\/attempt.php?attempt=51",
-        "name": "Attempt 51"
+        "name": "Attempt 51",
+        "type": "mod_attempt"
     },
     "module": {
         "id": "1",
@@ -201,6 +205,7 @@
         "showblocks": "0",
         "completionattemptsexhausted": "0",
         "completionpass": "0",
-        "url": "http:\/\/localhost\/moodle\/mod\/quiz\/view.php?id=3"
+        "url": "http:\/\/localhost\/moodle\/mod\/quiz\/view.php?id=3",
+        "type": "mod_quiz"
     }
 }
