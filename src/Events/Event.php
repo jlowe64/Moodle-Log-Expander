@@ -22,6 +22,7 @@ class Event extends PhpObj {
         return [
             'user' => $this->repo->readUser($opts['userid']),
             'course' => $this->repo->readCourse($opts['courseid']),
+            'app' => $this->repo->readCourse(1),
             'event' => $opts,
         ];
     }
