@@ -52,7 +52,8 @@
         "lastnamephonetic": "",
         "firstnamephonetic": "",
         "middlename": "",
-        "alternatename": ""
+        "alternatename": "",
+        "type": "mod_user"
     },
     "course": {
         "id": "2",
@@ -85,7 +86,8 @@
         "enablecompletion": "0",
         "completionnotify": "0",
         "cacherev": "1434624170",
-        "url": "http:\/\/localhost\/moodle\/course.php?id=2"
+        "url": "http:\/\/localhost\/moodle\/course.php?id=2",
+        "type": "mod_course"
     },
     "app": {
         "id": "1",
@@ -118,7 +120,8 @@
         "enablecompletion": "0",
         "completionnotify": "0",
         "cacherev": "1434621381",
-        "url": "http:\/\/localhost\/moodle\/course.php?id=1"
+        "url": "http:\/\/localhost\/moodle\/course.php?id=1",
+        "type": "mod_course"
     },
     "event": {
         "eventname": "\\mod_assign\\event\\assessable_submitted",
@@ -151,7 +154,8 @@
         "status": "submitted",
         "groupid": "0",
         "attemptnumber": "0",
-        "latest": "1"
+        "latest": "1",
+        "type": "mod_submission"
     },
     "module": {
         "id": "5",
@@ -182,6 +186,7 @@
         "markingallocation": "0",
         "sendstudentnotifications": "1",
         "preventsubmissionnotingroup": "0",
-        "url": "http:\/\/localhost\/moodle\/mod\/assign\/view.php?id=12"
+        "url": "http:\/\/localhost\/moodle\/mod\/assign\/view.php?id=12",
+        "type": "mod_assign"
     }
 }

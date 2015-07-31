@@ -34,6 +34,7 @@ class Repository extends PhpObj {
      */
     public function readObject($id, $type) {
         $model = $this->readStore($type, ['id' => $id]);
+        $model->type = $type;
         return $model;
     }
 
