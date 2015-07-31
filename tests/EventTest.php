@@ -48,6 +48,7 @@ class EventTest extends PhpUnitTestCase {
 
     protected function assertRecord($input, $output) {
         $this->assertEquals($input, $output->id);
+        $this->assertEquals('object', $output->type);
     }
 
     protected function assertUser($input, $output) {
