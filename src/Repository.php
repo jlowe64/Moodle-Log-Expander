@@ -100,4 +100,12 @@ class Repository extends PhpObj {
         $model->url = $this->cfg->wwwroot . '/mod/forum/discuss.php?d=' . $id;
         return $model;
     }
+    
+    /**
+     * Reads the Moodle release number.
+     * @return String
+     */
+    public function readRelease() {
+        return $this->cfg->release;
+    }
 }

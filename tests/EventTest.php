@@ -8,7 +8,8 @@ class EventTest extends PhpUnitTestCase {
 
     public function __construct() {
         $this->cfg = (object) [
-            'wwwroot' => 'http://www.example.com'
+            'wwwroot' => 'http://www.example.com',
+            'release' => '1.0.0',
         ];
         $this->repo = new TestRepository((object) [], $this->cfg);
     }
@@ -44,6 +45,12 @@ class EventTest extends PhpUnitTestCase {
         $this->assertCourse($input['courseid'], $output['course']);
         $this->assertCourse(1, $output['app']);
         $this->assertEquals($input, $output['event']);
+        $this->assertInfo($input, $output['info']);
+    }
+
+    protected function assertInfo($input, $output) {
+        $this->assertEquals($this->cfg->release, $output->{'https://moodle.org/'});
+        $this->assertEquals(file_get_contents(__DIR__.'/../VERSION'), $output->{'https://github.com/LearningLocker/Moodle-Log-Expander'});
     }
 
     protected function assertRecord($input, $output) {
