@@ -1,4 +1,8 @@
 {
+    "info": {
+        "https://moodle.org/": "1.0.0",
+        "https://github.com/LearningLocker/Moodle-Log-Expander": "1.0.0"
+    },
     "user": {
         "id": "2",
         "auth": "manual",
