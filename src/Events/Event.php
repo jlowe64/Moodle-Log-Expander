@@ -19,13 +19,14 @@ class Event extends PhpObj {
      * @return [String => Mixed]
      */
     public function read(array $opts) {
+        $version = str_replace("\r\n", "", file_get_contents(__DIR__.'/../../VERSION'));
         return [
             'user' => $this->repo->readUser($opts['userid']),
             'course' => $this->repo->readCourse($opts['courseid']),
             'app' => $this->repo->readCourse(1),
             'info' => (object) [
                 'https://moodle.org/' => $this->repo->readRelease(),
-                'https://github.com/LearningLocker/Moodle-Log-Expander' => file_get_contents(__DIR__.'/../../VERSION'),
+                'https://github.com/LearningLocker/Moodle-Log-Expander' => $version,
             ],
             'event' => $opts,
         ];
