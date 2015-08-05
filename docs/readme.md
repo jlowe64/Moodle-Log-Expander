@@ -30,6 +30,7 @@ Moodle Event | Expander Event | Test | Example
 \mod_assign\event\assessable_submitted | [AssignmentSubmitted](../src/Events/AssignmentSubmitted.php) | [AssignmentSubmittedTest](../tests/AssignmentSubmittedTest.php) | [AssignmentSubmitted](examples/AssignmentSubmitted.json)
 \mod_forum\event\discussion_viewed| [DiscussionViewed](../src/Events/DiscussionEvent.php) | [DiscussionEventTest](../tests/DiscussionEventTest.php) | [DiscussionViewed](examples/DiscussionEvent.json)
 \core\event\user_created | [Event](../src/Events/Event.php) | [EventTest](../tests/EventTest.php) | [Event](examples/Event.json)
+\core\event\user_enrolment_created | [Event](../src/Events/Event.php) | [EventTest](../tests/EventTest.php) | [Event](examples/Event.json)
 
 ## Adding Events
 To add an event create a new file in the "src/Events/" directory. You can then use the [ModuleEvent](../src/Events/ModuleEvent.php) as an example of what you're new file should look like. You will also need to change the [src/Controller.php file](../src/Controller.php) to map the Moodle event to your new event. Once you're happy with what you've done you'll need to create a pull request so that everyone else can use your new event.
