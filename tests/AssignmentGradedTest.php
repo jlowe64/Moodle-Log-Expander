@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \LogExpander\Events\AssignmentGraded as Event;
 
 class AssignmentGradedTest extends EventTest {

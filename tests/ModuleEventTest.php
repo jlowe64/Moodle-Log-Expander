@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \LogExpander\Events\ModuleEvent as Event;
 
 class ModuleEventTest extends EventTest {

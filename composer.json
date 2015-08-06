@@ -4,7 +4,7 @@
     "autoload": {
         "psr-4": {
           "LogExpander\\": "src/",
-          "Tests\\": "tests/"
+          "LogExpander\\Tests\\": "tests/"
         }
     },
     "require-dev": {

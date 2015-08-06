@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \LogExpander\Repository as MoodleRepository;
 
 class TestRepository extends MoodleRepository {
