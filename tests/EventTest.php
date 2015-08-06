@@ -34,6 +34,7 @@ class EventTest extends PhpUnitTestCase {
     protected function constructInput() {
         return [
             'userid' => 1,
+            'relateduserid' => 1,
             'courseid' => 1,
             'timecreated' => 1433946701,
             'eventname' => '\core\event\course_viewed',
