@@ -21,8 +21,8 @@ class Event extends PhpObj {
     public function read(array $opts) {
         $version = str_replace("\r\n", "", file_get_contents(__DIR__.'/../../VERSION'));
         return [
-            'user' => $this->repo->readUser($opts['userid']),
-            'relateduser' => $this->repo->readUser($opts['relateduserid']),
+            'user' => $opts['userid'] < 1 ? null : $this->repo->readUser($opts['userid']),
+            'relateduser' => $opts['relateduserid'] < 1 ? null : $this->repo->readUser($opts['relateduserid']),
             'course' => $this->repo->readCourse($opts['courseid']),
             'app' => $this->repo->readCourse(1),
             'info' => (object) [
