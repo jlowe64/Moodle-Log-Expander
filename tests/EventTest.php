@@ -42,6 +42,7 @@ class EventTest extends PhpUnitTestCase {
 
     protected function assertOutput($input, $output) {
         $this->assertUser($input['userid'], $output['user']);
+        $this->assertUser($input['relateduserid'], $output['relateduser']);
         $this->assertCourse($input['courseid'], $output['course']);
         $this->assertCourse(1, $output['app']);
         $this->assertEquals($input, $output['event']);
