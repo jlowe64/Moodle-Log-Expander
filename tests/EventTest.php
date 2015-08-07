@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use \LogExpander\Events\Event as Event;
 

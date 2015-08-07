@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \LogExpander\Events\AssignmentSubmitted as Event;
 
 class AssignmentSubmittedTest extends EventTest {
