@@ -20,6 +20,7 @@ class TestRepository extends MoodleRepository {
             'intro' => 'test_intro',
             'timestart' => 1433946701,
             'timefinish' => 1433946702,
+            'state' => 'finished',
             'course' => '1',
             'sumgrades' => '1',
             'grade' => '2',
