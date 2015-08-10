@@ -38,7 +38,7 @@ Moodle Event | Expander Event | Test | Example
 3. Run the tests you've created with "./vendor/bin/phpunit".
 4. You should see the tests fail.
 5. Create a new ".php" file in the "src/events" directory.
-6. Change the file from step 5 Use the "src/Events/ModuleEvent.php" file as an example.
+6. Change the file from step 5 using the "src/Events/ModuleEvent.php" file as an example.
 7. Run the tests with "./vendor/bin/phpunit".
 8. You should see the tests pass if you've done everything correctly.
 9. You may wish to repeat steps 2-4 and/or steps 6-8 at this point.
