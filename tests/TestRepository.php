@@ -29,6 +29,7 @@ class TestRepository extends MoodleRepository {
             'userid' => '1',
             'forum' => '1',
             'type' => 'object',
+            'scorm' => '1',
         ];
     }
 

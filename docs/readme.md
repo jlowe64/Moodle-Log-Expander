@@ -44,6 +44,7 @@ Moodle Event | Expander Event | Test | Example
 \mod_forum\event\discussion_viewed| [DiscussionViewed](../src/Events/DiscussionEvent.php) | [DiscussionEventTest](../tests/DiscussionEventTest.php) | [DiscussionViewed](examples/DiscussionEvent.json)
 \core\event\user_created | [Event](../src/Events/Event.php) | [EventTest](../tests/EventTest.php) | [Event](examples/Event.json)
 \core\event\user_enrolment_created | [Event](../src/Events/Event.php) | [EventTest](../tests/EventTest.php) | [Event](examples/Event.json)
+\mod_scorm\event\sco_launched | [ScormLaunched](../src/Events/ScormLaunched.php) | [ScormLaunchedTest](../tests/ScormLaunchedTest.php) | [ScormLaunched](examples/ScormLaunched.json)
 
 ## Adding Events
 1. Create a new ".php" file in the "tests" directory.
