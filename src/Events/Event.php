@@ -19,7 +19,7 @@ class Event extends PhpObj {
      * @return [String => Mixed]
      */
     public function read(array $opts) {
-        $version = str_replace("\n", "", str_replace("\r", "", file_get_contents(__DIR__.'/../../VERSION')));
+        $version = str_replace(PHP_EOL, '', file_get_contents(__DIR__.'/../../VERSION'));
         return [
             'user' => $opts['userid'] < 1 ? null : $this->repo->readUser($opts['userid']),
             'relateduser' => $opts['relateduserid'] < 1 ? null : $this->repo->readUser($opts['relateduserid']),
