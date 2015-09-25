@@ -1,7 +1,7 @@
 <?php namespace LogExpander\Tests;
-use \LogExpander\Events\ModuleEvent as Event;
+use \LogExpander\Events\ScormLaunched as Event;
 
-class ModuleEventTest extends EventTest {
+class ScormLaunchedTest extends EventTest {
     /**
      * Sets up the tests.
      * @override TestCase
@@ -12,14 +12,19 @@ class ModuleEventTest extends EventTest {
 
     protected function constructInput() {
         return array_merge(parent::constructInput(), [
-            'objecttable' => 'page',
+            'objecttable' => 'scorm_scoes',
             'objectid' => 1,
-            'eventname' => '\mod_page\event\course_module_viewed',
+            'eventname' => '\mod_scorm\event\sco_launched',
         ]);
     }
 
     protected function assertOutput($input, $output) {
         parent::assertOutput($input, $output);
-        $this->assertModule($input['objectid'], $output['module'], 'page');
+        $this->assertModule(1, $output['module'], 'scorm');
+        $this->assertScorm(1, $output['scorm_scoes']);
+    }
+
+    protected function assertScorm($input, $output) {
+        $this->assertRecord($input, $output);
     }
 }

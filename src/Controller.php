@@ -15,6 +15,19 @@ class Controller extends PhpObj {
         '\mod_book\event\course_module_viewed' => 'ModuleEvent',
         '\mod_scorm\event\course_module_viewed' => 'ModuleEvent',
         '\mod_resource\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_choice\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_data\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_feedback\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_lesson\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_lti\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_wiki\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_workshop\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_chat\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_glossary\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_imscp\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_survey\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_url\event\course_module_viewed' => 'ModuleEvent',
+        '\mod_facetoface\event\course_module_viewed' => 'ModuleEvent',
         '\mod_quiz\event\attempt_abandoned' => 'AttemptEvent',
         '\mod_quiz\event\attempt_preview_started' => 'AttemptEvent',
         '\mod_quiz\event\attempt_reviewed' => 'AttemptEvent',
@@ -23,6 +36,9 @@ class Controller extends PhpObj {
         '\core\event\user_loggedout' => 'Event',
         '\mod_assign\event\submission_graded' => 'AssignmentGraded',
         '\mod_assign\event\assessable_submitted' => 'AssignmentSubmitted',
+        '\core\event\user_created' => 'Event',
+        '\core\event\user_enrolment_created' => 'Event',
+        '\mod_scorm\event\sco_launched' => 'ScormLaunched',
     ];
 
     /**
@@ -40,7 +56,7 @@ class Controller extends PhpObj {
      */
     public function createEvent(array $opts) {
         $route = isset($opts['eventname']) ? $opts['eventname'] : '';
-        if (isset(static::$routes[$route])) {
+        if (isset(static::$routes[$route]) && ($opts['userid'] > 0 || $opts['relateduserid'] > 0)) {
             $event = '\LogExpander\Events\\'.static::$routes[$route];
             return (new $event($this->repo))->read($opts);
         } else {

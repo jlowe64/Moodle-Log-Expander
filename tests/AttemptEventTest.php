@@ -1,4 +1,4 @@
-<?php namespace Tests;
+<?php namespace LogExpander\Tests;
 use \LogExpander\Events\AttemptEvent as Event;
 
 class AttemptEventTest extends EventTest {
